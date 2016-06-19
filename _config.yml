@@ -11,7 +11,7 @@ name: Xixiang Wu # ex. DONGChuan
 email: xixiangwu0108@gmail.com
 location: Melbourne, Australia # ex. Nice, France
 company: University of Melbourne
-company_url: unimelb.edu.au
+company_url: http://unimelb.edu.au/
 github_url: http://github.io/XixiangWu/ # ex. https://github.com/DONGChuan
 description: Mac爱好者，计算机专业大二学生
 favicon: favicon.png # Image must be in assets/images
