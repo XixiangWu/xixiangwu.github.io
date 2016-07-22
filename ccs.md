@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 墨尔本大学中华文化社兴趣群
-subtitle: <span class="mega-octicon octicon-repo"></span>&nbsp;&nbsp; To mark useful libs - tools - books
+subtitle: <span class="mega-octicon octicon-repo"></span>&nbsp;&nbsp; 和靠谱的人做靠谱的事
 menu: CCS
 ---
 
