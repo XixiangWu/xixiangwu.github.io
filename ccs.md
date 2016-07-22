@@ -6,7 +6,7 @@ menu: CCS
 ---
 
 ## 墨尔本大学中华文化社兴趣小组群二维码
-![](/ccs_resouseces/ccslogo.jpg)
+![](./ccs_resouseces/ccslogo.jpg)
 ## 娱乐
 
 ## 学习
