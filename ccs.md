@@ -17,9 +17,16 @@ menu: CCS
 
 ## 娱乐
 
+
+## 运动
+
+![](https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/lanqiuqun.jpeg?raw=true)
+
 ## 学习
 
+
 ## 求职
+
 
 ## 技术
 
