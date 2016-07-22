@@ -20,7 +20,8 @@ menu: CCS
 ![](https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/ccslogo.jpg?raw=true)
 
 ## 娱乐
-
+<img src="![](https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/youxiqun.jpeg?raw=true)
+" width="48">
 
 ## 运动
 
