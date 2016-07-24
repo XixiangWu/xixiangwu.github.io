@@ -10,13 +10,13 @@ menu: CCS
 建立自己的兴趣小组，把二维码截图发给我，我会第一时间将你的群放在这个网站上，与更多的人共同分享。
 
 ## 娱乐
-
+<figure class="third">
 <img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/youxiqun.jpeg?raw=true" width="250">
 
 <img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/pokemon.jpeg?raw=true" width="250">
 
 <img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/qipaishi.jpeg?raw=true" width="250">
-
+</figure>
 ## 运动
 
 <img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/lanqiuqun.jpeg?raw=true" width="250">
