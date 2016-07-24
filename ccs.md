@@ -9,7 +9,29 @@ menu: CCS
 
 建立自己的兴趣小组，把二维码截图发给我，我会第一时间将你的群放在这个网站上，与更多的人共同分享。
 
-###### 联系我
+## 娱乐
+
+<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/youxiqun.jpeg?raw=true" width="250">
+
+<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/pokemon.jpeg?raw=true" width="250">
+
+<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/qipaishi.jpeg?raw=true" width="250">
+
+## 运动
+
+<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/lanqiuqun.jpeg?raw=true" width="250">
+
+## 学习
+
+<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/jinrongqun.jpeg?raw=true" width="250">
+
+## 求职
+
+
+## 技术
+
+
+##### 联系我
 
 微信：wxxwxxwxxwxx
 
@@ -18,20 +40,5 @@ menu: CCS
 邮箱：xixiangwu0108@gmail.com
 
 ![](https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/ccslogo.jpg?raw=true)
-
-## 娱乐
-<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/youxiqun.jpeg?raw=true" width="250">
-
-## 运动
-
-<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/lanqiuqun.jpeg?raw=true" width="250">
-
-## 学习
-
-
-## 求职
-
-
-## 技术
 
 
