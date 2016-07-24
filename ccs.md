@@ -31,6 +31,11 @@ menu: CCS
 ## 技术
 
 
+## 夕阳红🌇
+
+<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/laonianqun.jpeg?raw=true" width="250">
+
+
 ##### 联系我
 
 微信：wxxwxxwxxwxx
