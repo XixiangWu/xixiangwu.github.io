@@ -11,19 +11,19 @@ menu: CCS
 
 ## 娱乐
 <figure class="third">
-<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/youxiqun.jpeg?raw=true" width="250">
+<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/youxiqun.jpeg?raw=true" width="210">
 
-<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/pokemon.jpeg?raw=true" width="250">
+<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/pokemon.jpeg?raw=true" width="210">
 
-<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/qipaishi.jpeg?raw=true" width="250">
+<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/qipaishi.jpeg?raw=true" width="210">
 </figure>
 ## 运动
 
-<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/lanqiuqun.jpeg?raw=true" width="250">
+<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/lanqiuqun.jpeg?raw=true" width="210">
 
 ## 学习
 
-<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/jinrongqun.jpeg?raw=true" width="250">
+<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/jinrongqun.jpeg?raw=true" width="210">
 
 ## 求职
 
@@ -33,7 +33,7 @@ menu: CCS
 
 ## 夕阳红🌇
 
-<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/laonianqun.jpeg?raw=true" width="250">
+<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/laonianqun.jpeg?raw=true" width="210">
 
 
 ##### 联系我
