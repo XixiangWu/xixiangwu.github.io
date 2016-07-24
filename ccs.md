@@ -11,7 +11,7 @@ menu: CCS
 
 ## 娱乐
 <figure class="third">
-<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/youxiqun.jpeg?raw=true" width="210">
+<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/youxiqun.jpg?raw=true" width="210">
 
 <img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/pokemon.jpeg?raw=true" width="210">
 
@@ -21,7 +21,7 @@ menu: CCS
 
 ## 运动
 
-<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/lanqiuqun.jpeg?raw=true" width="210">
+<img src="https://github.com/XixiangWu/xixiangwu.github.io/blob/master/ccs_resources/lanqiuqun.jpg?raw=true" width="210">
 
 ## 学习
 
