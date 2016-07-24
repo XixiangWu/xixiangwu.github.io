@@ -69,8 +69,8 @@ navs:
     label: Blog
 
   -
-    href: /unimelbccs
-    label: UnimelbCCS
+    href: /ccs
+    label: CCS
 
   -
     href: /about
