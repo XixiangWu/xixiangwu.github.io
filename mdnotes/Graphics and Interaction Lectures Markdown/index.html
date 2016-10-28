@@ -4,748 +4,500 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<title>Kinematics</title>
+		<title>Graphics Review Notes</title>
 	</head>
 <body>
-<h1>Kinematics</h1>
+<h3>Perspective &amp; Polygonal Geometry</h3>
 
 <hr />
 
-<h2>Kinematics</h2>
-
-<p>Forward kinematics for me is: </p>
-
-<ul>
-	<li>Apply a behaviour to my robot arm—e.g. rotate one of my arms by pre-determined angles for each joint (degree of freedom)</li>
-	<li>Apply a steering behaviour to my robot body—e.g. translate myself by a pre-determined vector on the 2D surface (using my wheels) </li>
-</ul>
-
-<p>Inverse kinematics for me is: </p>
-
-<ul>
-	<li>How do I configure my robot arm to reach it?—determine all of the previously unknown angles for my joints. </li>
-	<li>Can my robot arm reach that object? </li>
-	<li>Is the object reachable from where I am?—do I need a forward kinematics translation by moving adjacent to it?</li>
-</ul>
-
-<h2>Forward kinematics</h2>
-
-<p>Forward kinematics can be posed as applying homogeneous transformations relative to the coordinate system.</p>
+<h4>Viewing</h4>
 
 <figure><img src="DraggedImage.png"/></figure>
 
+<h4>Viewport</h4>
+
 <figure><img src="DraggedImage-1.png"/></figure>
-
-<h2>Inverse kinematics </h2>
-
-<p>The inverse kinematic problem is one of the most difficult to solve, as a set of simultaneous equations must be solved.</p>
-
-<figure><img src="DraggedImage-2.png"/></figure>
-
-<h2>Degrees of freedom in human animation</h2>
-
-<p>In the human skeleton, each joint angle is typically specified by three angles and therefore have three degrees of freedom(DOF).</p>
-
-<ul>
-	<li>With increased degrees of freedom (more joints) get more possible solutions (or redundancy of movement). </li>
-	<li>After including, legs, hands, feet, head and a spine will have well over 100 degrees of freedom, possibly without even including fingers and toes!</li>
-</ul>
-
-<figure><img src="DraggedImage-3.png"/></figure>
-
-<h2>Solving Inverse Kinematics</h2>
-
-<p>Problems can arise in solving simultaneous equations for inverse kinematics, including</p>
-
-<ul>
-	<li>the existence of multiple solutions (or joint configurations)</li>
-	<li>the possible non-existence of any solution (unreachable), or</li>
-	<li>sigularities of matrix equations (we will see later).</li>
-</ul>
-
-<h2>Solution techniques</h2>
-
-<p>We can solve simultaneous equations using iterative or algebraic algorithms</p>
-
-<h3>Algebraic algorithms</h3>
-
-<p>Algebraic techniques for solving linear simultaneous equations are known from the field of numerical methods.</p>
-
-<h3>Iterative algorithms</h3>
-
-<ul>
-	<li>Iterative algorithms work by calculating an approximate solution which converges to the exact solution, </li>
-	<li>typically be used for solving non-linear simultaneous equations or when numerical stability if paramount important.</li>
-</ul>
-
-<h2>Algebraic approach</h2>
-
-<figure><img src="DraggedImage-4.png"/></figure>
-
-<figure><img src="DraggedImage-5.png"/></figure>
-
-<ul>
-	<li>Note that checking if the determinant is zero requires the concept of &quot;zero&quot; in floating point, which requires the use of a small non-zero constant that is just larger than the maximum expected error as a result of numerical precision</li>
-	<li>This will depend on the machine you implement on.</li>
-</ul>
 
 <hr />
 
-<h2>Algebraic example </h2>
+<h3>Geometry of image formation</h3>
+
+<p>Mapping from 3D space to 2D image surface, moving from a higher dimensional image to a lower dimensional image</p>
+
+<h4>Perspective geometry</h4>
+
+<figure><img src="DraggedImage-2.png"/></figure>
+
+<h4>Virtual camera geometry</h4>
+
+<figure><img src="DraggedImage-3.png"/></figure>
+
+<h4>Perspective Formulas</h4>
+
+<figure><img src="DraggedImage-4.png"/></figure>
+
+<p>Only for camera-cantered coordinates</p>
+
+<hr />
+
+<h3>Centre of projection</h3>
+
+<figure><img src="DraggedImage-5.png"/></figure>
+
+<h4>One point perspective projection</h4>
 
 <figure><img src="DraggedImage-6.png"/></figure>
 
 <figure><img src="DraggedImage-7.png"/></figure>
 
+<h4>“Two-point” perspective</h4>
+
 <figure><img src="DraggedImage-8.png"/></figure>
+
+<h4>“Three-point” perspective</h4>
 
 <figure><img src="DraggedImage-9.png"/></figure>
 
+<h3>Vanishing points</h3>
+
+<ul>
+	<li>Parallel lines meet at infinity -&gt; <strong>infinity vanishing point</strong></li>
+	<li>Parallel to one principal axes -&gt; <strong>axis vanishing point</strong></li>
+	<li>Special cases -&gt; <strong>“one-point”, “two-point”, and “three-point”</strong></li>
+</ul>
+
+<hr />
+
+<h3>Classes of projection</h3>
+
+<p>Subclasses of planar geometric projections</p>
+
 <figure><img src="DraggedImage-10.png"/></figure>
+
+<h3>One-point, centred perspective projection example</h3>
 
 <figure><img src="DraggedImage-11.png"/></figure>
 
-<hr />
+<h3>Two-point perspective projection example</h3>
 
-<h2>The complexity of matrix algebra</h2>
+<p>In a two-point projection of a house, left, the viewplane (defined by the view plane normal, VPN), right, cuts both the z and x axes</p>
 
 <figure><img src="DraggedImage-12.png"/></figure>
 
+<hr />
+
+<h4>Ortographics (parallel) projection</h4>
+
 <figure><img src="DraggedImage-13.png"/></figure>
+
+<hr />
+
+<h3>Polygonal geometry</h3>
+
+<p>In general a polygon is any plane figure bounded by straight line segments and but can comprise these forms</p>
 
 <figure><img src="DraggedImage-14.png"/></figure>
 
+<h4>Representation</h4>
+
 <figure><img src="DraggedImage-15.png"/></figure>
+
+<h5>Polygon mesh: vertex list</h5>
 
 <figure><img src="DraggedImage-16.png"/></figure>
 
+<h5>Polygon mesh: edge list</h5>
+
 <figure><img src="DraggedImage-17.png"/></figure>
 
-<hr />
+<p>Polygons represented as line segments, edges can make <strong>polygon clipping</strong> and <strong>scan-line</strong> filling operations easier.</p>
 
-<h2>The challenge of Inverse Kinematics</h2>
-
-<p>Since solutions to simultaneous equations is central to geometric transformations and inverse kinematics </p>
-
-<ul>
-	<li>can’t efficiently calculate inverse matrices directly for solving simultaneous equations fast enough for real time, and </li>
-	<li>can’t efficiently check for singularities necessary to guarantee numerical stability or meaningful solutions.</li>
-</ul>
-
-<p>In practice iterative algorithms are used that reduce the complexity of the arithmetic.</p>
-
-<h1>Ray Tracing</h1>
-
-<hr />
-
-<h2>Ray tracing</h2>
-
-<blockquote>
-<p>tracing backwards the path of each ray of light entering the camera to find out what objects it encountered, and what light sources it came from!</p>
-</blockquote>
-
-<ul>
-	<li>Each pixel in the created image corresponds to a line of </li>
-	<li>sight. Start from image not polygon or object as in rendering pipeline approach. </li>
-	<li>We can trace back this line of sight (ray) to find the nearest object surface it intersects.</li>
-</ul>
+<h5>Polygon types</h5>
 
 <figure><img src="DraggedImage-18.png"/></figure>
 
-<figure><img src="DraggedImage-19.png"/></figure>
-
-<h2>Real-time Ray tracing?</h2>
-
-<p>The cardinality (or size) of the ray tracing problem is determined by the number of pixels in the image or viewport, as opposed to the number of polygons in the scene as in the rendering pipeline approach. In addition, ray tracing is made more computationally intensive by the recursive nature of ray tracing (depending upon what order you assume in terms of how many re-reflections of rays you cater for).</p>
-
-<h2>Some real-time ray tracing techiques</h2>
-
-<p>Quite a large number of approaches to speed up. </p>
+<h4>Polygon Properties</h4>
 
 <ul>
-	<li>Pre-baking, </li>
-	<li>OpenRL (low level interactive ray tracing API), </li>
-	<li>Bounding volumes, e.g. Binary space parition trees (BSPs) </li>
-	<li>. . .</li>
+	<li>In a <strong>convex</strong> polygon no internal angle is greater than 180 degrees</li>
+	<li>In a <strong>concave</strong> polygon there are internal angles that can be greater than 180 degrees</li>
+	<li><strong>Concave</strong> polygons can be represented as a <strong>conjunction</strong> of convex polygons (convex polygons have certain properties that simplify geometric operations and tesselations).</li>
 </ul>
 
-<h2>Refraction</h2>
+<hr />
+
+<h3>Level of detail</h3>
+
+<h4>Vertex spit method</h4>
+
+<figure><img src="DraggedImage-19.png"/></figure>
+
+<h1>The rendering pipeline I</h1>
+
+<hr />
+
+<h2>Graphics Programming</h2>
+
+<ul>
+	<li>Game engines, and other graphics programs, generally use either Direct3D (Windows) or OpenGL (most other platforms)</li>
+	<li>Modern PC graphics cards will support some version of both APIs</li>
+	<li>Game engines (like Unity) build upon these APIs to make development easier </li>
+</ul>
+
+<hr />
+
+<h2>Pipelining</h2>
+
+<ul>
+	<li>Both OpenGL and Direct3D operate a <strong>pipeline</strong>, consisting of several different stages</li>
+	<li>This allows the programmer to perform a number of different operations on the input data, and provides greater efficiency</li>
+	<li>We will focus mainly on Direct3D pipeline</li>
+</ul>
+
+<h2>Direct3D 11 Pipeline</h2>
 
 <figure><img src="DraggedImage-20.png"/></figure>
 
-<h2>Calculating the refraction vector</h2>
+<p>Simplify:</p>
 
 <figure><img src="DraggedImage-21.png"/></figure>
 
-<hr />
+<h3>Representing Objects</h3>
 
-<h2>Transparency</h2>
+<ul>
+	<li>For efficiency, the graphics card will render objects as triangles </li>
+	<li><strong>Any</strong> polyhedron can be represented by triangles </li>
+	<li>Other 3D shapes can be approximated by triangles </li>
+</ul>
+
+<h3>Input Assembler </h3>
+
+<blockquote>
+<p>Reads <strong>data</strong> from our buffers into a primitive format that can be used by the <strong>other stages of the pipeline</strong></p>
+</blockquote>
+
+<ul>
+	<li>We mainly use Triangle Lists</li>
+</ul>
 
 <figure><img src="DraggedImage-22.png"/></figure>
 
-<hr />
+<h3>Vertex Shader</h3>
 
-<h2>Shadow volumes &amp; the Stencil Buffer</h2>
+<blockquote>
+<p>Performs operations on individual vertices received from the Input Assembler stage</p>
+</blockquote>
+
+<ul>
+	<li>This will typically include transformations </li>
+	<li>May also include per-vertex lighting</li>
+</ul>
+
+<h3>Vertex Shader Transformations</h3>
 
 <figure><img src="DraggedImage-23.png"/></figure>
 
-<h2>Scan-line generation of shadows</h2>
-
 <figure><img src="DraggedImage-24.png"/></figure>
 
-<h1>Interpolation and splines</h1>
-
-<hr />
-
-<h1>Texture</h1>
-
-<hr />
-
-<h2>Shadows</h2>
+<h3>Tessellation(密集) Stages</h3>
 
 <blockquote>
-<p>Shadows occur where objects are hidden from a light source</p>
+<p>(Optional Stages)</p>
+
+<p>These stages allow us to generate additional vertices within the GPU. Can take a lower detail model and render in higher detail  Can perform level of detail scaling</p>
 </blockquote>
 
-<ul>
-	<li>Omit any intensity contribution from hidden light sources </li>
-	<li>Umbra and penumbra (function of size of light source) </li>
-	<li>Soft shadows and hard shadows (point light source at a distance) </li>
-	<li>Important perceptual clue for connecting objects to ground (feet in particular) </li>
-	<li>But object-to-object shadows also important </li>
-	<li>In general, shadows from many light sources</li>
-</ul>
+<h3>Geometry Shader</h3>
 
-<h2>Planar Projection Shadows</h2>
+<blockquote>
+<p>(Optional Stages)</p>
 
-<p>Shadow is projection of polygon onto the surface with the center of projection at the light source</p>
+<p> Operates on an entire primitive (e.g. triangle)  Can perform a number of algorithms, e.g. dynamically calculating normals, particle systems, shadow volume generation</p>
+</blockquote>
 
 <figure><img src="DraggedImage-25.png"/></figure>
 
-<h2>Planar Projetion Shadows</h2>
+<h3>Stream Output Stage</h3>
+
+<blockquote>
+<p>Allows us to receive data (vertices or primitives) from the geometry shader or vertex shader and feed back into pipeline for processing by another set of shaders</p>
+
+<p>Useful e.g. for particle systems</p>
+</blockquote>
+
+<h3>Rasterizer Stage</h3>
+
+<blockquote>
+<p>Interpolates data between vertices to produce per-pixel data.Clips primitives into view frustum</p>
+
+<p>Performs culling</p>
+</blockquote>
 
 <figure><img src="DraggedImage-26.png"/></figure>
 
-<h2>Planar Projection Shadows in OpenGL</h2>
+<h3>Culling</h3>
+
+<blockquote>
+<p>In order to avoid rendering vertices that will not be displayed in the final image, DirectX performs ‘culling’  Triangles facing away from the camera will be culled and not rendered </p>
+</blockquote>
+
+<ul>
+	<li>DirectX performs ‘<strong>Counter-Clockwise culling</strong>’ (Default)
+
+		<ul>
+			<li>Triangles with vertices in a counter<strong>clockwise order are not rendered</strong></li>
+			<li>Use <strong>Left hand rule</strong></li>
+		</ul></li>
+</ul>
 
 <figure><img src="DraggedImage-27.png"/></figure>
 
-<h2>Limitations of Planar Projection Shadows</h2>
+<h3>Pixel (Fragment) Shader</h3>
 
-<ul>
-	<li>Only do shadows on flat surfaces </li>
-	<li>Objects must be far enough apart to not cast shadows on each other—although artifacts often hard to detect.</li>
-</ul>
+<blockquote>
+<p>Produces <strong>colour</strong> values for each interpolated pixel fragment </p>
 
-<hr />
+<p>Per-pixel lighting can be performed</p>
 
-<h2>Other Shadow Algorithms </h2>
+<p>Can also produce depth values for depthbuffering</p>
+</blockquote>
 
-<h3>Shadow Maps(Williams, 1978)</h3>
+<h3>Output-Merger Stage</h3>
 
-<ul>
-	<li>Render from light source to compute depth map (z distance to closest object for each pixel in the map). </li>
-	<li>While rendering, if a point (x,y,z) is visible, map (x,y,z) in the coordinates of the viewpoint to (x’,y’,z’), the coordinates of the point from the light. </li>
-	<li>If z’ is greater than the value in the z-buffer for that point, then a surface is nearer to the light source than the point under consideration and the point is in shadow. If so, render with a shadow intensity, if not render as normal.</li>
-	<li>Handles multiple light sources (with multiple z-buffers), moving objects and lights (at the cost of several renderings). Clearly a winning strategy with hardware.</li>
-</ul>
+<blockquote>
+<p>Combines pixel shader output values to produce final image</p>
+
+<p>may also perform depth buffering</p>
+</blockquote>
 
 <figure><img src="DraggedImage-28.png"/></figure>
 
-<h3>Projecting polygons—scan line (Appel 1968)</h3>
+<h3>Double Buffering </h3>
+
+<blockquote>
+<p>Don&#39;t want to draw objects directly to the screen</p>
+
+<p>The screen could update before a new frame has been completely drawn</p>
+
+<p>Instead, draw next frame to a buffer and swap buffers when complete.</p>
+</blockquote>
 
 <figure><img src="DraggedImage-29.png"/></figure>
 
-<h3>Shadow Volumes (Crow 1977)</h3>
+<hr />
+
+<h2>Shader</h2>
+
+<p>A very simple Unity Shader</p>
 
 <figure><img src="DraggedImage-30.png"/></figure>
 
+<h3>The Structure</h3>
+
 <figure><img src="DraggedImage-31.png"/></figure>
-
-<hr />
-
-<h1>Texture mapping</h1>
-
-<p>Real objects have small surface features </p>
-
-<ul>
-	<li>One option: use a huge number of polygons with appropriate surface coloring and reflectance characteristics </li>
-	<li>Another option: use a mapping algorithm to modify the shading algorithm – Texture mapping – Bump mapping – Displacement mapping – Environmental mapping</li>
-</ul>
 
 <figure><img src="DraggedImage-32.png"/></figure>
 
-<h3>2D Texture Mapping</h3>
+<h4>What&#39;s permitted in CG/HLSL</h4>
 
-<h4>Texture Mapping General</h4>
+<blockquote>
+<p>The CG/HLSL syntax is quite similar to C</p>
+
+<p>There are a number of permitted datatypes (N.B. Not exhaustive):</p>
+</blockquote>
 
 <figure><img src="DraggedImage-33.png"/></figure>
 
-<h4>Specifying the Mapping Function</h4>
-
-<p>Some objects have natural parameterizations:</p>
-
-<ul>
-	<li>Sphere: use spherical coordinates (φ,θ)=(2πu,πv) </li>
-	<li>Cylinder: use cylindrical coordinates (u,θ)=(u,2πv)</li>
-</ul>
-
 <figure><img src="DraggedImage-34.png"/></figure>
+
+<p>Functions:</p>
 
 <figure><img src="DraggedImage-35.png"/></figure>
 
-<p>For arbitrary polygonal objects:</p>
+<h1>Transformation geometry and homogeneous coordinates</h1>
 
-<p>Two steps mapping:</p>
+<hr />
 
-<ul>
-	<li>To a canonical shape first</li>
-	<li>Then project normals from object</li>
-</ul>
+<h2>Transformation geometry</h2>
 
 <figure><img src="DraggedImage-36.png"/></figure>
 
-<p>Or design the mapping by hand</p>
-
 <figure><img src="DraggedImage-37.png"/></figure>
 
-<h2>Texture mapping in OpenGL</h2>
-
-<p>A parallel pipeline for pixel operations: Texture mapping is part of the shading process</p>
+<h2>Geometric transformations</h2>
 
 <figure><img src="DraggedImage-38.png"/></figure>
 
-<figure><img src="DraggedImage-39.png"/></figure>
+<h2>Rotation</h2>
 
-<h2>Grungy details we&#39;ve ignored</h2>
+<figure><img src="DraggedImage-39.png"/></figure>
 
 <figure><img src="DraggedImage-40.png"/></figure>
 
-<h2>Aliasing</h2>
+<h2>Rigid body transformations</h2>
 
 <blockquote>
-<p>Sampling error when mapping texture images to screen</p>
+<p>That is, if two points are a certain distance apart, they will still be the same distance apart after undergoing one of these transformations</p>
 </blockquote>
+
+<h3>Reflection</h3>
 
 <figure><img src="DraggedImage-41.png"/></figure>
 
+<hr />
+
+<p>To combine all the staffs above</p>
+
+<h2>Homogeneous coordinates</h2>
+
 <blockquote>
-<p>An on-screen pixel may not map neatly to a texel. </p>
+<p>Homogeneous coordinates introduces a third dummy coordinate w, represented as (x, y, w).</p>
 </blockquote>
 
 <figure><img src="DraggedImage-42.png"/></figure>
 
-<hr />
-
-<h2>The Beginnings of a Solution: Mipmapping</h2>
-
-<ul>
-	<li>Pre-calculate how the texture should look at various distances, then use the appropriate texture at each distance. This is called mipmapping. </li>
-	<li>“Mip” “multum in parvo” or “many things in a small place” </li>
-	<li> Each mipmap (each image below) represents a level of resolution. </li>
-	<li>Powers of 2 make things much easier.</li>
-</ul>
+<h2> Non-rigid body transformations</h2>
 
 <figure><img src="DraggedImage-43.png"/></figure>
 
-<ul>
-	<li>Problem: Clear divisions between different depth levels </li>
-	<li>Mipmapping alone is unsatisfactory.</li>
-</ul>
+<h2>Affine transformations</h2>
 
-<h3>Filtering</h3>
+<p>An affine transformation <strong>preserves</strong></p>
 
 <ul>
-	<li>Take the average of multiple texels to obtain the final RGB value </li>
-	<li>Typically used along with mipmapping </li>
-	<li>Bilinear filtering 
-
-		<ul>
-			<li>Average the four surrounding texels </li>
-			<li>Cheap, and eliminates some aliasing, but does not help with visible LOD divisions</li>
-		</ul></li>
-	<li>Trilinear filtering 
-
-		<ul>
-			<li>Interpolate between two LODs </li>
-			<li>Final RGB value is between the result of a bilinear filter at one LOD and a second bilinear filter at the next LOD </li>
-			<li>Eliminates “seams” between LODs </li>
-			<li>At least twice as expensive as bilinear filtering</li>
-		</ul></li>
-	<li>Anisotropic filtering 
-
-		<ul>
-			<li>Basic filtering methods assume that a pixel on-screen maps to a square (isotropic) region of the texture </li>
-			<li>For surfaces tilted away from the viewer, this is not the case!</li>
-		</ul></li>
+	<li>collinearity between points (i.e. three points which lie on a line continue to be colinear after the transformation), and</li>
+	<li>ratios of distances between any two points.</li>
 </ul>
+
+<p>Therefore translation, rotation, scaling and shear are all affine transformations.</p>
+
+<h2> Scaling</h2>
 
 <figure><img src="DraggedImage-44.png"/></figure>
 
-<ul>
-	<li>Anisotropic filtering 
-
-		<ul>
-			<li>A pixel may map to a rectangular or trapezoidal section of texels—shape filters accordingly and use either bilinear or trilinear filtering </li>
-			<li>Complicated, but produces very nice results</li>
-		</ul></li>
-</ul>
-
-<p>Side-by-Side Comparison</p>
+<h2>Shear</h2>
 
 <figure><img src="DraggedImage-45.png"/></figure>
 
-<h2>Texture Generation</h2>
-
-<p>Photographs </p>
-
-<p>Drawings </p>
-
-<p>Procedural methods (2D or 3D) </p>
-
-<p>Associate each x,y,z value directly with an s,t,r value in the texture block (sculpting in marble and granite)</p>
-
 <figure><img src="DraggedImage-46.png"/></figure>
-
-<p>Procedural Methods</p>
 
 <figure><img src="DraggedImage-47.png"/></figure>
 
-<h3>Solid Textures</h3>
-
 <figure><img src="DraggedImage-48.png"/></figure>
 
-<h3>Uses for Texture Mapping</h3>
+<h2>Combining transformation matrices</h2>
 
 <figure><img src="DraggedImage-49.png"/></figure>
 
-<h3>Radiance vs. Reflectance Mapping</h3>
+<h2>Affine transformations in 2D</h2>
 
 <figure><img src="DraggedImage-50.png"/></figure>
 
-<h3>Multitexturing</h3>
-
 <figure><img src="DraggedImage-51.png"/></figure>
+
+<h1>Three-dimensional transformation geometry and perspective</h1>
 
 <hr />
 
-<h2>Bump Mapping:A Dirty Trick</h2>
+<h2>Three-dimensional coordinate systems</h2>
+
+<p>3D (Cartesian) coordinates (X, Y, Z) can be considered in terms of left-handed and right-handed coordinate systems. The &quot;right-hand-rule&quot;</p>
 
 <figure><img src="DraggedImage-52.png"/></figure>
+
+<h2>Three-dimensional rotation</h2>
+
+<p>Need to specify axis of rotation, and by how much such as a 3D unit vector, plus rotation angle. </p>
+
+<p><strong>Convention</strong>: rotation angle is clockwise looking along axis of rotation Note, this is consistent with ordinary 2D anti-clockwise convention: Really a rotation around a positive Z axis coming up out of the page in a right-handed coordinate frame.</p>
+
+<p>e.g.</p>
 
 <figure><img src="DraggedImage-53.png"/></figure>
 
 <figure><img src="DraggedImage-54.png"/></figure>
 
+<p>NOTE: </p>
+
+<ul>
+	<li>Left side: rotate along y-axis, anticlockwise (negative), degree (90-Theta)</li>
+	<li>Right side: rotate along x-axis, clockwise (positive), degree (fi)</li>
+</ul>
+
 <figure><img src="DraggedImage-55.png"/></figure>
+
+<p>Overall:</p>
 
 <figure><img src="DraggedImage-56.png"/></figure>
 
-<figure><img src="DraggedImage-57.png"/></figure>
+<h2>Homogeneous versions</h2>
 
-<p>Exampe:</p>
+<figure><img src="DraggedImage-57.png"/></figure>
 
 <figure><img src="DraggedImage-58.png"/></figure>
 
 <figure><img src="DraggedImage-59.png"/></figure>
 
-<hr />
-
-<h2>Displacement Mapping</h2>
-
 <figure><img src="DraggedImage-60.png"/></figure>
 
 <hr />
 
-<h2>Environment Mapping</h2>
+<h2>Gimbal Lock</h2>
 
 <figure><img src="DraggedImage-61.png"/></figure>
 
+<ul>
+	<li>Lost a degree of freedom </li>
+	<li>Changing the rotation order affects the axis on which gimbal lock occurs, but does not prevent if from occurring.</li>
+</ul>
+
+<hr />
+
+<h2>Quaternions </h2>
+
 <figure><img src="DraggedImage-62.png"/></figure>
+
+<h3>Quaternions Operations</h3>
 
 <figure><img src="DraggedImage-63.png"/></figure>
 
-<h3>Environment Mapping: Cube Maps</h3>
+<h3>Quaternions Rotations</h3>
 
 <figure><img src="DraggedImage-64.png"/></figure>
 
-<h1>Colour</h1>
-
-<hr />
-
-<h2>1.1 Properties of (visible) light</h2>
-
-<blockquote>
-<p>Light is electromagnetic radiation in the wavelength range of 400nm (blue) to 700nm (red).</p>
-</blockquote>
-
-<p>Colour vision is based on the tri-stimulus theory of colour perception where three kinds of cones are sensitive to red, green and blue light. </p>
-
-<ul>
-	<li>Use of tri-stimulus values is known as the RGB model. Another value system is hue, saturation, brightness (HSB) model, closely related to human preprocessing of light (both RGB and HSB are typically supported in most graphics API’s, including Java)</li>
-</ul>
-
-<hr />
-
-<h2>1.2 Response of human cone photo-receptors (relative)</h2>
+<h3>Quaternions to matrices</h3>
 
 <figure><img src="DraggedImage-65.png"/></figure>
 
-<h2>Luminous efficiency of human eye</h2>
+<h4>Activity</h4>
 
 <figure><img src="DraggedImage-66.png"/></figure>
 
+<p>TODO: Answer this.</p>
+
+<h3>Quaternion&#39;s advantages</h3>
+
+<ul>
+	<li>Avoids gimbal lock </li>
+	<li>More efficient to calculate </li>
+	<li>Not dependant on axis rotation order </li>
+	<li>Easy to interpolate rotations</li>
+</ul>
+
 <hr />
 
-<h1>1.3 Human colour vision characteristics</h1>
-
-<p>Colour perception depends on colour context (e.g. what colour and intensity resides next to what other colour etc.) </p>
-
-<ul>
-	<li>Blue alone tends to be perceived quite weakly. The greatest colour discrimination(歧视) is in the green to yellow range. </li>
-</ul>
-
-<p>People vary quite widely, even amongst people with “normal” colour vision (adjust your monitor to suit yourself). </p>
-
-<ul>
-	<li>Forms of colour blindness include red-green, blue-yellow and achromatic(色盲), has obvious implications for the display of computer graphics.</li>
-</ul>
-
-<h2>1.4 Colour</h2>
+<h3>Arbitrary camera orientation</h3>
 
 <figure><img src="DraggedImage-67.png"/></figure>
+
+<h3>Matrix form of perspective projection</h3>
 
 <figure><img src="DraggedImage-68.png"/></figure>
 
 <figure><img src="DraggedImage-69.png"/></figure>
 
 <figure><img src="DraggedImage-70.png"/></figure>
-
-<hr />
-
-<h2>2 Images</h2>
-
-<blockquote>
-<p>Images are two-dimensional (2D) patterns of light, that possess intensity and colour properties, and can be considered as a function (bounded by visibility) that maps a plane into some space of measurements</p>
-</blockquote>
-
-<figure><img src="DraggedImage-71.png"/></figure>
-
-<h2>Digitisation</h2>
-
-<blockquote>
-<p>conversion of analog information into digital information</p>
-</blockquote>
-
-<p>Digitisation involves sampling over a regular spatial grid, typically square or rectangular (rarely hexagonal or triangular, but occasionally in robotics). </p>
-
-<p>Sampling involves quantisation over intensity values, for each of the pixels in an image. Pixels can be either,</p>
-
-<ul>
-	<li>in linear proportion to intensity or in non-linear (adaptive) proportion (as in night vision in the human eye), and either </li>
-	<li>continuous in value (grey-scale or colour) or binary in value (bitmap representation of 0’s and 1’s)</li>
-</ul>
-
-<h2>Digital images</h2>
-
-<p>Pixels are the elements sampled by the digitisation process. The digital image, or picture captured from each scene is subject to trade-offs, including</p>
-
-<ul>
-	<li>resolution (fineness of sampling or quantisation) versus fidelity, and consequently </li>
-	<li>fidelity versus storage and processing costs.</li>
-</ul>
-
-<hr />
-
-<h2>2.1 Image formats</h2>
-
-<ul>
-	<li>Typically <strong>header</strong> plus <strong>pixel</strong> data </li>
-	<li>Header may be fixed record structure, or variable (e.g. attribute/value list), or some combination. </li>
-	<li><strong>Internal</strong> versus <strong>external</strong> formats </li>
-	<li>Depends whether the purpose of the format is for the interchange of images (e.g. streaming of images or video over the Internet) or for optimised, random-access during memory and processor operations.</li>
-</ul>
-
-<h3>Image header information</h3>
-
-<p>Mandatory information: </p>
-
-<ul>
-	<li>Magic number (that indicates what format image is, generally used in conjunction with file suffix) </li>
-	<li>Pixel type such as bit, byte or integer (sometimes unsigned) float, double or complex (imaginary numbers are used by the Fourier transform for smoothing images)</li>
-	<li>Image size (in rows and columns) </li>
-</ul>
-
-<p>Optional information: </p>
-
-<ul>
-	<li>Statistics such as minimum and maximum values of intensities or colour values (very useful for display, means don’t have to parse entire image first) </li>
-	<li>Additional geometrical information such as aspect-ratio or origin offset </li>
-	<li>Ownership, program that created image and name of organisation or company</li>
-</ul>
-
-<h3>Image pixel data</h3>
-
-<p>Images are generally saved in order of raster scanning, like mapping a two-dimensional (2D) array into linear storage (used by computer memory).</p>
-
-<ul>
-	<li>Normally left-to-right then top-to-bottom, however sometimes in other orders (always check before making assumptions, when given images to work with) </li>
-	<li>Pixels may be either be stored using (natural machine units) bytes, integers, floats or (packed) bit fields that need to be converted (unpacked) before displaying. </li>
-	<li>Often contain padding, to make them an even size for optimised file input and output in many graphics application programming interfaces (API’s).</li>
-</ul>
-
-<h3>Variation of pixel data</h3>
-
-<p>Images vary in the number of dimension according to their sources and can be either multi-dimensional or one-dimensional.</p>
-
-<ul>
-	<li>In Eric Grimson’s enhanced-reality medical surgery, both three-dimensional (3D) nuclear magnetic image (NMR) images and motion sequences are involved </li>
-</ul>
-
-<p>Multi-band images include multiple values at each pixel, the most common being the colour red, green, blue (RGB) and hue, saturation and brightness (HSB) formats. </p>
-
-<ul>
-	<li>Multi-spectral remote sensing data is being continuously collected from low-orbiting satellites for geographic applications, such as vegetation or salination information or even spying. </li>
-</ul>
-
-<p><strong>Question: can you think of an example of a one-dimensional image (1D), or even a zero-dimensional (0D) image?</strong></p>
-
-<h3>Complex and structured image formats</h3>
-
-<p>More complex pixel formats maintain structural information about image regions or other spatial or temporal (Fourier) qualities. </p>
-
-<ul>
-	<li>include quad-trees, run-length encoding, </li>
-	<li>support non-rectangular images of arbitrary shape (however the transparent gif format used on web pages cheats by using background overlays), and </li>
-	<li>(of course) image compression. </li>
-</ul>
-
-<p>Some image formats use structured picture-description languages, including Postscript, PDF (the format of these lecture slides) and scalable vector graphics (SVG) format frequently used for web pages. </p>
-
-<p><strong>Question: how can a static digital pixel image have (pseudo) temporal qualities?</strong></p>
-
-<hr />
-
-<h2>2.2 image coordinate systems</h2>
-
-<p>Coordinate system used by Java and text</p>
-
-<figure><img src="DraggedImage-72.png"/></figure>
-
-<h3>Cartesian coordinates</h3>
-
-<figure><img src="DraggedImage-73.png"/></figure>
-
-<h3>Matrix coordinates</h3>
-
-<figure><img src="DraggedImage-74.png"/></figure>
-
-<h3>Offset coordinates</h3>
-
-<figure><img src="DraggedImage-75.png"/></figure>
-
-<h1>Rasterization and Barycentric Coordinates</h1>
-
-<hr />
-
-<h2>Introduction to Rasterization</h2>
-
-<p>Rasterization is the stage of the graphics pipeline that</p>
-
-<ul>
-	<li>first determine the pixels covered by a primitive e (e.g. a triangle) and interpolates the output parameters of the vertex shader (in particular depth) for each covered pixel; then </li>
-	<li>the interpolated output parameters are then given to the fragment shader; using </li>
-	<li><strong>barycentric</strong> coordinate system (for more sophisticated interpolation).</li>
-</ul>
-
-<h2>Rasterization, Visibility &amp; Anti-aliasing</h2>
-
-<p>Rasterization involves two additional operations: </p>
-
-<ul>
-	<li>Visibility, and </li>
-	<li>Anti-aliasing</li>
-</ul>
-
-<h1>Surface rendering and shading</h1>
-
-<hr />
-
-<h2>Shading techniques</h2>
-
-<blockquote>
-<p>For polyhedral objects, we can use flat shading or full shading</p>
-</blockquote>
-
-<ul>
-	<li>In flat shading, compute the shading at some representative point of each (visible) polygon face (may be a vertex, or the centroid of the face, assuming it lies within the face). Then use this computed value to fill the whole polygon. </li>
-	<li>In full shading, do the complete shading calculation at each pixel as the polygon is displayed.</li>
-</ul>
-
-<p>In flat shading, </p>
-
-<ul>
-	<li>the same value is used to render the entire polygon, </li>
-	<li>it misses out on shading variations. </li>
-</ul>
-
-<p>It is therefore realistic only for distant viewer and distant light source.</p>
-
-<p>If our polyhedron is really intended as an approximation to a curved object, then either flat shading or full shading are inappropriate. </p>
-
-<p>The discontinuities in surface normal where the face meet will lead to artefactual discontinuities in the shading. </p>
-
-<p>There are two cures for this: <strong>Gouraud</strong> shading and <strong>Phong</strong> shading. In both, compute an “average” surface normal at each visible vertex, by averaging the normals of the faces that meet there.</p>
-
-<p>Because of the contrast enhancing caused by lateral inhibition in our visual systems, these false edges are strongly perceived and are therefore even more objectionable.</p>
-
-<hr />
-
-<h2>Gouraud shading</h2>
-
-<figure><img src="DraggedImage-76.png"/></figure>
-
-<h3>Calculating surface normals</h3>
-
-<figure><img src="DraggedImage-77.png"/></figure>
-
-<figure><img src="DraggedImage-78.png"/></figure>
-
-<p>Gouraud shading is also called <strong>intensity interpolated shading</strong>.</p>
-
-<hr />
-
-<h2>Orientation dependence</h2>
-
-<figure><img src="DraggedImage-79.png"/></figure>
-
-<hr />
-
-<h2>Perspective distortion</h2>
-
-<p>Imagine you have a polygon with vertex 1 more distant than vertex 2. In this case you get perspective distortion, since perspective foreshortening means that the difference from one scan line to another increases in the direction of the further coordinate. Under these conditions you can get polygonal silhouettes and edges can look weird.</p>
-
-<h2>Phong shading</h2>
-
-<figure><img src="DraggedImage-80.png"/></figure>
-
-<figure><img src="DraggedImage-81.png"/></figure>
-
-<figure><img src="DraggedImage-82.png"/></figure>
-
-<hr />
-
-<h2>Gouraud sharing with specular reflection</h2>
-
-<p>Intensity interpolation (Gouraud shading) <strong>can</strong> be used with <strong>specular</strong> reflection but get less pronounced highlights (according to specular reflection coefficient)</p>
-
-<hr />
-
-<h2>Unrepresentative vertex normals</h2>
-
-<figure><img src="DraggedImage-83.png"/></figure>
-
-<p>If interpolation is used, this example should appear like corrugated iron!</p>
 
 <h1>Illumination Models</h1>
 
@@ -858,47 +610,47 @@
 <p>Light that comes uniformly from all directions.</p>
 </blockquote>
 
-<figure><img src="DraggedImage-84.png"/></figure>
+<figure><img src="DraggedImage-71.png"/></figure>
 
 <p>Ambient illumination is mathematically an extended form of <strong>Lambertian reflection</strong>, integrating contributions from an infinite number of infinitesimal point light sources in all directions, instead of a single point light source.</p>
 
 <p>In ambient shading assume that light comes uniformly from all directions (average of full rendering case). </p>
 
-<figure><img src="DraggedImage-85.png"/></figure>
+<figure><img src="DraggedImage-72.png"/></figure>
 
 <hr />
 
 <h2>Lambertian (diffuse) reflection (朗博光源； 扩散光源)</h2>
 
-<figure><img src="DraggedImage-86.png"/></figure>
+<figure><img src="DraggedImage-73.png"/></figure>
 
-<figure><img src="DraggedImage-87.png"/></figure>
+<figure><img src="DraggedImage-74.png"/></figure>
 
-<figure><img src="DraggedImage-88.png"/></figure>
+<figure><img src="DraggedImage-75.png"/></figure>
 
-<figure><img src="DraggedImage-89.png"/></figure>
+<figure><img src="DraggedImage-76.png"/></figure>
 
 <hr />
 
 <h2>Independence of surface orientation</h2>
 
-<figure><img src="DraggedImage-90.png"/></figure>
+<figure><img src="DraggedImage-77.png"/></figure>
 
-<figure><img src="DraggedImage-91.png"/></figure>
+<figure><img src="DraggedImage-78.png"/></figure>
 
-<figure><img src="DraggedImage-92.png"/></figure>
+<figure><img src="DraggedImage-79.png"/></figure>
 
 <h2>Independence of distance of viewer from surface</h2>
 
-<figure><img src="DraggedImage-93.png"/></figure>
+<figure><img src="DraggedImage-80.png"/></figure>
 
 <h2>Dependence of distance of light source from surface</h2>
 
-<figure><img src="DraggedImage-94.png"/></figure>
+<figure><img src="DraggedImage-81.png"/></figure>
 
-<figure><img src="DraggedImage-95.png"/></figure>
+<figure><img src="DraggedImage-82.png"/></figure>
 
-<figure><img src="DraggedImage-96.png"/></figure>
+<figure><img src="DraggedImage-83.png"/></figure>
 
 <h2>Specular reflection (镜面反光， 高光)</h2>
 
@@ -914,7 +666,7 @@
 
 <h3>Specular reflection as a function of angle</h3>
 
-<figure><img src="DraggedImage-97.png"/></figure>
+<figure><img src="DraggedImage-84.png"/></figure>
 
 <p>NOTE:</p>
 
@@ -957,21 +709,21 @@
 
 <h2>Phong illumination model and specular reflection</h2>
 
-<figure><img src="DraggedImage-98.png"/></figure>
+<figure><img src="DraggedImage-85.png"/></figure>
 
-<figure><img src="DraggedImage-99.png"/></figure>
+<figure><img src="DraggedImage-86.png"/></figure>
 
-<figure><img src="DraggedImage-100.png"/></figure>
+<figure><img src="DraggedImage-87.png"/></figure>
 
-<figure><img src="DraggedImage-101.png"/></figure>
+<figure><img src="DraggedImage-88.png"/></figure>
 
-<figure><img src="DraggedImage-102.png"/></figure>
+<figure><img src="DraggedImage-89.png"/></figure>
 
 <hr />
 
 <h2>Combined lighting models</h2>
 
-<figure><img src="DraggedImage-103.png"/></figure>
+<figure><img src="DraggedImage-90.png"/></figure>
 
 <hr />
 
@@ -989,497 +741,745 @@
 
 <p>This is governed by the <strong>Fresnel equation</strong>.</p>
 
-<h1>Three-dimensional transformation geometry and perspective</h1>
+<h1>Surface rendering and shading</h1>
 
 <hr />
 
-<h2>Three-dimensional coordinate systems</h2>
+<h2>Shading techniques</h2>
 
-<p>3D (Cartesian) coordinates (X, Y, Z) can be considered in terms of left-handed and right-handed coordinate systems. The &quot;right-hand-rule&quot;</p>
+<blockquote>
+<p>For polyhedral objects, we can use flat shading or full shading</p>
+</blockquote>
+
+<ul>
+	<li>In flat shading, compute the shading at some representative point of each (visible) polygon face (may be a vertex, or the centroid of the face, assuming it lies within the face). Then use this computed value to fill the whole polygon. </li>
+	<li>In full shading, do the complete shading calculation at each pixel as the polygon is displayed.</li>
+</ul>
+
+<p>In flat shading, </p>
+
+<ul>
+	<li>the same value is used to render the entire polygon, </li>
+	<li>it misses out on shading variations. </li>
+</ul>
+
+<p>It is therefore realistic only for distant viewer and distant light source.</p>
+
+<p>If our polyhedron is really intended as an approximation to a curved object, then either flat shading or full shading are inappropriate. </p>
+
+<p>The discontinuities in surface normal where the face meet will lead to artefactual discontinuities in the shading. </p>
+
+<p>There are two cures for this: <strong>Gouraud</strong> shading and <strong>Phong</strong> shading. In both, compute an “average” surface normal at each visible vertex, by averaging the normals of the faces that meet there.</p>
+
+<p>Because of the contrast enhancing caused by lateral inhibition in our visual systems, these false edges are strongly perceived and are therefore even more objectionable.</p>
+
+<hr />
+
+<h2>Gouraud shading</h2>
+
+<figure><img src="DraggedImage-91.png"/></figure>
+
+<h3>Calculating surface normals</h3>
+
+<figure><img src="DraggedImage-92.png"/></figure>
+
+<figure><img src="DraggedImage-93.png"/></figure>
+
+<p>Gouraud shading is also called <strong>intensity interpolated shading</strong>.</p>
+
+<hr />
+
+<h2>Orientation dependence</h2>
+
+<figure><img src="DraggedImage-94.png"/></figure>
+
+<hr />
+
+<h2>Perspective distortion</h2>
+
+<p>Imagine you have a polygon with vertex 1 more distant than vertex 2. In this case you get perspective distortion, since perspective foreshortening means that the difference from one scan line to another increases in the direction of the further coordinate. Under these conditions you can get polygonal silhouettes and edges can look weird.</p>
+
+<h2>Phong shading</h2>
+
+<figure><img src="DraggedImage-95.png"/></figure>
+
+<figure><img src="DraggedImage-96.png"/></figure>
+
+<figure><img src="DraggedImage-97.png"/></figure>
+
+<hr />
+
+<h2>Gouraud sharing with specular reflection</h2>
+
+<p>Intensity interpolation (Gouraud shading) <strong>can</strong> be used with <strong>specular</strong> reflection but get less pronounced highlights (according to specular reflection coefficient)</p>
+
+<hr />
+
+<h2>Unrepresentative vertex normals</h2>
+
+<figure><img src="DraggedImage-98.png"/></figure>
+
+<p>If interpolation is used, this example should appear like corrugated iron!</p>
+
+<h1>Rasterization and Barycentric Coordinates</h1>
+
+<hr />
+
+<h2>Introduction to Rasterization</h2>
+
+<p>Rasterization is the stage of the graphics pipeline that</p>
+
+<ul>
+	<li>first determine the pixels covered by a primitive e (e.g. a triangle) and interpolates the output parameters of the vertex shader (in particular depth) for each covered pixel; then </li>
+	<li>the interpolated output parameters are then given to the fragment shader; using </li>
+	<li><strong>barycentric</strong> coordinate system (for more sophisticated interpolation).</li>
+</ul>
+
+<h2>Rasterization, Visibility &amp; Anti-aliasing</h2>
+
+<p>Rasterization involves two additional operations: </p>
+
+<ul>
+	<li>Visibility, and </li>
+	<li>Anti-aliasing</li>
+</ul>
+
+<h1>Colour</h1>
+
+<hr />
+
+<h2>1.1 Properties of (visible) light</h2>
+
+<blockquote>
+<p>Light is electromagnetic radiation in the wavelength range of 400nm (blue) to 700nm (red).</p>
+</blockquote>
+
+<p>Colour vision is based on the tri-stimulus theory of colour perception where three kinds of cones are sensitive to red, green and blue light. </p>
+
+<ul>
+	<li>Use of tri-stimulus values is known as the RGB model. Another value system is hue, saturation, brightness (HSB) model, closely related to human preprocessing of light (both RGB and HSB are typically supported in most graphics API’s, including Java)</li>
+</ul>
+
+<hr />
+
+<h2>1.2 Response of human cone photo-receptors (relative)</h2>
+
+<figure><img src="DraggedImage-99.png"/></figure>
+
+<h2>Luminous efficiency of human eye</h2>
+
+<figure><img src="DraggedImage-100.png"/></figure>
+
+<hr />
+
+<h1>1.3 Human colour vision characteristics</h1>
+
+<p>Colour perception depends on colour context (e.g. what colour and intensity resides next to what other colour etc.) </p>
+
+<ul>
+	<li>Blue alone tends to be perceived quite weakly. The greatest colour discrimination(歧视) is in the green to yellow range. </li>
+</ul>
+
+<p>People vary quite widely, even amongst people with “normal” colour vision (adjust your monitor to suit yourself). </p>
+
+<ul>
+	<li>Forms of colour blindness include red-green, blue-yellow and achromatic(色盲), has obvious implications for the display of computer graphics.</li>
+</ul>
+
+<h2>1.4 Colour</h2>
+
+<figure><img src="DraggedImage-101.png"/></figure>
+
+<figure><img src="DraggedImage-102.png"/></figure>
+
+<figure><img src="DraggedImage-103.png"/></figure>
 
 <figure><img src="DraggedImage-104.png"/></figure>
 
-<h2>Three-dimensional rotation</h2>
+<hr />
 
-<p>Need to specify axis of rotation, and by how much such as a 3D unit vector, plus rotation angle. </p>
+<h2>2 Images</h2>
 
-<p><strong>Convention</strong>: rotation angle is clockwise looking along axis of rotation Note, this is consistent with ordinary 2D anti-clockwise convention: Really a rotation around a positive Z axis coming up out of the page in a right-handed coordinate frame.</p>
-
-<p>e.g.</p>
+<blockquote>
+<p>Images are two-dimensional (2D) patterns of light, that possess intensity and colour properties, and can be considered as a function (bounded by visibility) that maps a plane into some space of measurements</p>
+</blockquote>
 
 <figure><img src="DraggedImage-105.png"/></figure>
 
-<figure><img src="DraggedImage-106.png"/></figure>
+<h2>Digitisation</h2>
 
-<p>NOTE: </p>
+<blockquote>
+<p>conversion of analog information into digital information</p>
+</blockquote>
+
+<p>Digitisation involves sampling over a regular spatial grid, typically square or rectangular (rarely hexagonal or triangular, but occasionally in robotics). </p>
+
+<p>Sampling involves quantisation over intensity values, for each of the pixels in an image. Pixels can be either,</p>
 
 <ul>
-	<li>Left side: rotate along y-axis, anticlockwise (negative), degree (90-Theta)</li>
-	<li>Right side: rotate along x-axis, clockwise (positive), degree (fi)</li>
+	<li>in linear proportion to intensity or in non-linear (adaptive) proportion (as in night vision in the human eye), and either </li>
+	<li>continuous in value (grey-scale or colour) or binary in value (bitmap representation of 0’s and 1’s)</li>
 </ul>
+
+<h2>Digital images</h2>
+
+<p>Pixels are the elements sampled by the digitisation process. The digital image, or picture captured from each scene is subject to trade-offs, including</p>
+
+<ul>
+	<li>resolution (fineness of sampling or quantisation) versus fidelity, and consequently </li>
+	<li>fidelity versus storage and processing costs.</li>
+</ul>
+
+<hr />
+
+<h2>2.1 Image formats</h2>
+
+<ul>
+	<li>Typically <strong>header</strong> plus <strong>pixel</strong> data </li>
+	<li>Header may be fixed record structure, or variable (e.g. attribute/value list), or some combination. </li>
+	<li><strong>Internal</strong> versus <strong>external</strong> formats </li>
+	<li>Depends whether the purpose of the format is for the interchange of images (e.g. streaming of images or video over the Internet) or for optimised, random-access during memory and processor operations.</li>
+</ul>
+
+<h3>Image header information</h3>
+
+<p>Mandatory information: </p>
+
+<ul>
+	<li>Magic number (that indicates what format image is, generally used in conjunction with file suffix) </li>
+	<li>Pixel type such as bit, byte or integer (sometimes unsigned) float, double or complex (imaginary numbers are used by the Fourier transform for smoothing images)</li>
+	<li>Image size (in rows and columns) </li>
+</ul>
+
+<p>Optional information: </p>
+
+<ul>
+	<li>Statistics such as minimum and maximum values of intensities or colour values (very useful for display, means don’t have to parse entire image first) </li>
+	<li>Additional geometrical information such as aspect-ratio or origin offset </li>
+	<li>Ownership, program that created image and name of organisation or company</li>
+</ul>
+
+<h3>Image pixel data</h3>
+
+<p>Images are generally saved in order of raster scanning, like mapping a two-dimensional (2D) array into linear storage (used by computer memory).</p>
+
+<ul>
+	<li>Normally left-to-right then top-to-bottom, however sometimes in other orders (always check before making assumptions, when given images to work with) </li>
+	<li>Pixels may be either be stored using (natural machine units) bytes, integers, floats or (packed) bit fields that need to be converted (unpacked) before displaying. </li>
+	<li>Often contain padding, to make them an even size for optimised file input and output in many graphics application programming interfaces (API’s).</li>
+</ul>
+
+<h3>Variation of pixel data</h3>
+
+<p>Images vary in the number of dimension according to their sources and can be either multi-dimensional or one-dimensional.</p>
+
+<ul>
+	<li>In Eric Grimson’s enhanced-reality medical surgery, both three-dimensional (3D) nuclear magnetic image (NMR) images and motion sequences are involved </li>
+</ul>
+
+<p>Multi-band images include multiple values at each pixel, the most common being the colour red, green, blue (RGB) and hue, saturation and brightness (HSB) formats. </p>
+
+<ul>
+	<li>Multi-spectral remote sensing data is being continuously collected from low-orbiting satellites for geographic applications, such as vegetation or salination information or even spying. </li>
+</ul>
+
+<p><strong>Question: can you think of an example of a one-dimensional image (1D), or even a zero-dimensional (0D) image?</strong></p>
+
+<h3>Complex and structured image formats</h3>
+
+<p>More complex pixel formats maintain structural information about image regions or other spatial or temporal (Fourier) qualities. </p>
+
+<ul>
+	<li>include quad-trees, run-length encoding, </li>
+	<li>support non-rectangular images of arbitrary shape (however the transparent gif format used on web pages cheats by using background overlays), and </li>
+	<li>(of course) image compression. </li>
+</ul>
+
+<p>Some image formats use structured picture-description languages, including Postscript, PDF (the format of these lecture slides) and scalable vector graphics (SVG) format frequently used for web pages. </p>
+
+<p><strong>Question: how can a static digital pixel image have (pseudo) temporal qualities?</strong></p>
+
+<hr />
+
+<h2>2.2 image coordinate systems</h2>
+
+<p>Coordinate system used by Java and text</p>
+
+<figure><img src="DraggedImage-106.png"/></figure>
+
+<h3>Cartesian coordinates</h3>
 
 <figure><img src="DraggedImage-107.png"/></figure>
 
-<p>Overall:</p>
+<h3>Matrix coordinates</h3>
 
 <figure><img src="DraggedImage-108.png"/></figure>
 
-<h2>Homogeneous versions</h2>
+<h3>Offset coordinates</h3>
 
 <figure><img src="DraggedImage-109.png"/></figure>
 
+<h1>Texture</h1>
+
+<hr />
+
+<h2>Shadows</h2>
+
+<blockquote>
+<p>Shadows occur where objects are hidden from a light source</p>
+</blockquote>
+
+<ul>
+	<li>Omit any intensity contribution from hidden light sources </li>
+	<li>Umbra and penumbra (function of size of light source) </li>
+	<li>Soft shadows and hard shadows (point light source at a distance) </li>
+	<li>Important perceptual clue for connecting objects to ground (feet in particular) </li>
+	<li>But object-to-object shadows also important </li>
+	<li>In general, shadows from many light sources</li>
+</ul>
+
+<h2>Planar Projection Shadows</h2>
+
+<p>Shadow is projection of polygon onto the surface with the center of projection at the light source</p>
+
 <figure><img src="DraggedImage-110.png"/></figure>
+
+<h2>Planar Projetion Shadows</h2>
 
 <figure><img src="DraggedImage-111.png"/></figure>
 
+<h2>Planar Projection Shadows in OpenGL</h2>
+
 <figure><img src="DraggedImage-112.png"/></figure>
+
+<h2>Limitations of Planar Projection Shadows</h2>
+
+<ul>
+	<li>Only do shadows on flat surfaces </li>
+	<li>Objects must be far enough apart to not cast shadows on each other—although artifacts often hard to detect.</li>
+</ul>
 
 <hr />
 
-<h2>Gimbal Lock</h2>
+<h2>Other Shadow Algorithms </h2>
+
+<h3>Shadow Maps(Williams, 1978)</h3>
+
+<ul>
+	<li>Render from light source to compute depth map (z distance to closest object for each pixel in the map). </li>
+	<li>While rendering, if a point (x,y,z) is visible, map (x,y,z) in the coordinates of the viewpoint to (x’,y’,z’), the coordinates of the point from the light. </li>
+	<li>If z’ is greater than the value in the z-buffer for that point, then a surface is nearer to the light source than the point under consideration and the point is in shadow. If so, render with a shadow intensity, if not render as normal.</li>
+	<li>Handles multiple light sources (with multiple z-buffers), moving objects and lights (at the cost of several renderings). Clearly a winning strategy with hardware.</li>
+</ul>
 
 <figure><img src="DraggedImage-113.png"/></figure>
 
-<ul>
-	<li>Lost a degree of freedom </li>
-	<li>Changing the rotation order affects the axis on which gimbal lock occurs, but does not prevent if from occurring.</li>
-</ul>
-
-<hr />
-
-<h2>Quaternions </h2>
+<h3>Projecting polygons—scan line (Appel 1968)</h3>
 
 <figure><img src="DraggedImage-114.png"/></figure>
 
-<h3>Quaternions Operations</h3>
+<h3>Shadow Volumes (Crow 1977)</h3>
 
 <figure><img src="DraggedImage-115.png"/></figure>
 
-<h3>Quaternions Rotations</h3>
-
 <figure><img src="DraggedImage-116.png"/></figure>
 
-<h3>Quaternions to matrices</h3>
+<hr />
+
+<h1>Texture mapping</h1>
+
+<p>Real objects have small surface features </p>
+
+<ul>
+	<li>One option: use a huge number of polygons with appropriate surface coloring and reflectance characteristics </li>
+	<li>Another option: use a mapping algorithm to modify the shading algorithm – Texture mapping – Bump mapping – Displacement mapping – Environmental mapping</li>
+</ul>
 
 <figure><img src="DraggedImage-117.png"/></figure>
 
-<h4>Activity</h4>
+<h3>2D Texture Mapping</h3>
+
+<h4>Texture Mapping General</h4>
 
 <figure><img src="DraggedImage-118.png"/></figure>
 
-<p>TODO: Answer this.</p>
+<h4>Specifying the Mapping Function</h4>
 
-<h3>Quaternion&#39;s advantages</h3>
+<p>Some objects have natural parameterizations:</p>
 
 <ul>
-	<li>Avoids gimbal lock </li>
-	<li>More efficient to calculate </li>
-	<li>Not dependant on axis rotation order </li>
-	<li>Easy to interpolate rotations</li>
+	<li>Sphere: use spherical coordinates (φ,θ)=(2πu,πv) </li>
+	<li>Cylinder: use cylindrical coordinates (u,θ)=(u,2πv)</li>
 </ul>
-
-<hr />
-
-<h3>Arbitrary camera orientation</h3>
 
 <figure><img src="DraggedImage-119.png"/></figure>
 
-<h3>Matrix form of perspective projection</h3>
-
 <figure><img src="DraggedImage-120.png"/></figure>
+
+<p>For arbitrary polygonal objects:</p>
+
+<p>Two steps mapping:</p>
+
+<ul>
+	<li>To a canonical shape first</li>
+	<li>Then project normals from object</li>
+</ul>
 
 <figure><img src="DraggedImage-121.png"/></figure>
 
+<p>Or design the mapping by hand</p>
+
 <figure><img src="DraggedImage-122.png"/></figure>
 
-<h1>Transformation geometry and homogeneous coordinates</h1>
+<h2>Texture mapping in OpenGL</h2>
 
-<hr />
-
-<h2>Transformation geometry</h2>
+<p>A parallel pipeline for pixel operations: Texture mapping is part of the shading process</p>
 
 <figure><img src="DraggedImage-123.png"/></figure>
 
 <figure><img src="DraggedImage-124.png"/></figure>
 
-<h2>Geometric transformations</h2>
+<h2>Grungy details we&#39;ve ignored</h2>
 
 <figure><img src="DraggedImage-125.png"/></figure>
 
-<h2>Rotation</h2>
+<h2>Aliasing</h2>
+
+<blockquote>
+<p>Sampling error when mapping texture images to screen</p>
+</blockquote>
 
 <figure><img src="DraggedImage-126.png"/></figure>
 
-<figure><img src="DraggedImage-127.png"/></figure>
-
-<h2>Rigid body transformations</h2>
-
 <blockquote>
-<p>That is, if two points are a certain distance apart, they will still be the same distance apart after undergoing one of these transformations</p>
+<p>An on-screen pixel may not map neatly to a texel. </p>
 </blockquote>
 
-<h3>Reflection</h3>
-
-<figure><img src="DraggedImage-128.png"/></figure>
+<figure><img src="DraggedImage-127.png"/></figure>
 
 <hr />
 
-<p>To combine all the staffs above</p>
+<h2>The Beginnings of a Solution: Mipmapping</h2>
 
-<h2>Homogeneous coordinates</h2>
+<ul>
+	<li>Pre-calculate how the texture should look at various distances, then use the appropriate texture at each distance. This is called mipmapping. </li>
+	<li>“Mip” “multum in parvo” or “many things in a small place” </li>
+	<li> Each mipmap (each image below) represents a level of resolution. </li>
+	<li>Powers of 2 make things much easier.</li>
+</ul>
 
-<blockquote>
-<p>Homogeneous coordinates introduces a third dummy coordinate w, represented as (x, y, w).</p>
-</blockquote>
+<figure><img src="DraggedImage-128.png"/></figure>
+
+<ul>
+	<li>Problem: Clear divisions between different depth levels </li>
+	<li>Mipmapping alone is unsatisfactory.</li>
+</ul>
+
+<h3>Filtering</h3>
+
+<ul>
+	<li>Take the average of multiple texels to obtain the final RGB value </li>
+	<li>Typically used along with mipmapping </li>
+	<li>Bilinear filtering 
+
+		<ul>
+			<li>Average the four surrounding texels </li>
+			<li>Cheap, and eliminates some aliasing, but does not help with visible LOD divisions</li>
+		</ul></li>
+	<li>Trilinear filtering 
+
+		<ul>
+			<li>Interpolate between two LODs </li>
+			<li>Final RGB value is between the result of a bilinear filter at one LOD and a second bilinear filter at the next LOD </li>
+			<li>Eliminates “seams” between LODs </li>
+			<li>At least twice as expensive as bilinear filtering</li>
+		</ul></li>
+	<li>Anisotropic filtering 
+
+		<ul>
+			<li>Basic filtering methods assume that a pixel on-screen maps to a square (isotropic) region of the texture </li>
+			<li>For surfaces tilted away from the viewer, this is not the case!</li>
+		</ul></li>
+</ul>
 
 <figure><img src="DraggedImage-129.png"/></figure>
 
-<h2> Non-rigid body transformations</h2>
+<ul>
+	<li>Anisotropic filtering 
+
+		<ul>
+			<li>A pixel may map to a rectangular or trapezoidal section of texels—shape filters accordingly and use either bilinear or trilinear filtering </li>
+			<li>Complicated, but produces very nice results</li>
+		</ul></li>
+</ul>
+
+<p>Side-by-Side Comparison</p>
 
 <figure><img src="DraggedImage-130.png"/></figure>
 
-<h2>Affine transformations</h2>
+<h2>Texture Generation</h2>
 
-<p>An affine transformation <strong>preserves</strong></p>
+<p>Photographs </p>
 
-<ul>
-	<li>collinearity between points (i.e. three points which lie on a line continue to be colinear after the transformation), and</li>
-	<li>ratios of distances between any two points.</li>
-</ul>
+<p>Drawings </p>
 
-<p>Therefore translation, rotation, scaling and shear are all affine transformations.</p>
+<p>Procedural methods (2D or 3D) </p>
 
-<h2> Scaling</h2>
+<p>Associate each x,y,z value directly with an s,t,r value in the texture block (sculpting in marble and granite)</p>
 
 <figure><img src="DraggedImage-131.png"/></figure>
 
-<h2>Shear</h2>
+<p>Procedural Methods</p>
 
 <figure><img src="DraggedImage-132.png"/></figure>
 
+<h3>Solid Textures</h3>
+
 <figure><img src="DraggedImage-133.png"/></figure>
+
+<h3>Uses for Texture Mapping</h3>
 
 <figure><img src="DraggedImage-134.png"/></figure>
 
+<h3>Radiance vs. Reflectance Mapping</h3>
+
 <figure><img src="DraggedImage-135.png"/></figure>
 
-<h2>Combining transformation matrices</h2>
+<h3>Multitexturing</h3>
 
 <figure><img src="DraggedImage-136.png"/></figure>
 
-<h2>Affine transformations in 2D</h2>
+<hr />
+
+<h2>Bump Mapping:A Dirty Trick</h2>
 
 <figure><img src="DraggedImage-137.png"/></figure>
 
 <figure><img src="DraggedImage-138.png"/></figure>
 
-<h3>Perspective &amp; Polygonal Geometry</h3>
-
-<hr />
-
-<h4>Viewing</h4>
-
 <figure><img src="DraggedImage-139.png"/></figure>
-
-<h4>Viewport</h4>
 
 <figure><img src="DraggedImage-140.png"/></figure>
 
-<hr />
-
-<h3>Geometry of image formation</h3>
-
-<p>Mapping from 3D space to 2D image surface, moving from a higher dimensional image to a lower dimensional image</p>
-
-<h4>Perspective geometry</h4>
-
 <figure><img src="DraggedImage-141.png"/></figure>
-
-<h4>Virtual camera geometry</h4>
 
 <figure><img src="DraggedImage-142.png"/></figure>
 
-<h4>Perspective Formulas</h4>
+<p>Exampe:</p>
 
 <figure><img src="DraggedImage-143.png"/></figure>
 
-<p>Only for camera-cantered coordinates</p>
+<figure><img src="DraggedImage-144.png"/></figure>
 
 <hr />
 
-<h3>Centre of projection</h3>
-
-<figure><img src="DraggedImage-144.png"/></figure>
-
-<h4>One point perspective projection</h4>
+<h2>Displacement Mapping</h2>
 
 <figure><img src="DraggedImage-145.png"/></figure>
 
-<figure><img src="DraggedImage-146.png"/></figure>
+<hr />
 
-<h4>“Two-point” perspective</h4>
+<h2>Environment Mapping</h2>
+
+<figure><img src="DraggedImage-146.png"/></figure>
 
 <figure><img src="DraggedImage-147.png"/></figure>
 
-<h4>“Three-point” perspective</h4>
-
 <figure><img src="DraggedImage-148.png"/></figure>
 
-<h3>Vanishing points</h3>
-
-<ul>
-	<li>Parallel lines meet at infinity -&gt; <strong>infinity vanishing point</strong></li>
-	<li>Parallel to one principal axes -&gt; <strong>axis vanishing point</strong></li>
-	<li>Special cases -&gt; <strong>“one-point”, “two-point”, and “three-point”</strong></li>
-</ul>
-
-<hr />
-
-<h3>Classes of projection</h3>
-
-<p>Subclasses of planar geometric projections</p>
+<h3>Environment Mapping: Cube Maps</h3>
 
 <figure><img src="DraggedImage-149.png"/></figure>
 
-<h3>One-point, centred perspective projection example</h3>
+<h1>Interpolation and splines</h1>
+
+<hr />
+
+<h1>Ray Tracing</h1>
+
+<hr />
+
+<h2>Ray tracing</h2>
+
+<blockquote>
+<p>tracing backwards the path of each ray of light entering the camera to find out what objects it encountered, and what light sources it came from!</p>
+</blockquote>
+
+<ul>
+	<li>Each pixel in the created image corresponds to a line of </li>
+	<li>sight. Start from image not polygon or object as in rendering pipeline approach. </li>
+	<li>We can trace back this line of sight (ray) to find the nearest object surface it intersects.</li>
+</ul>
 
 <figure><img src="DraggedImage-150.png"/></figure>
 
-<h3>Two-point perspective projection example</h3>
-
-<p>In a two-point projection of a house, left, the viewplane (defined by the view plane normal, VPN), right, cuts both the z and x axes</p>
-
 <figure><img src="DraggedImage-151.png"/></figure>
 
-<hr />
+<h2>Real-time Ray tracing?</h2>
 
-<h4>Ortographics (parallel) projection</h4>
+<p>The cardinality (or size) of the ray tracing problem is determined by the number of pixels in the image or viewport, as opposed to the number of polygons in the scene as in the rendering pipeline approach. In addition, ray tracing is made more computationally intensive by the recursive nature of ray tracing (depending upon what order you assume in terms of how many re-reflections of rays you cater for).</p>
+
+<h2>Some real-time ray tracing techiques</h2>
+
+<p>Quite a large number of approaches to speed up. </p>
+
+<ul>
+	<li>Pre-baking, </li>
+	<li>OpenRL (low level interactive ray tracing API), </li>
+	<li>Bounding volumes, e.g. Binary space parition trees (BSPs) </li>
+	<li>. . .</li>
+</ul>
+
+<h2>Refraction</h2>
 
 <figure><img src="DraggedImage-152.png"/></figure>
 
-<hr />
-
-<h3>Polygonal geometry</h3>
-
-<p>In general a polygon is any plane figure bounded by straight line segments and but can comprise these forms</p>
+<h2>Calculating the refraction vector</h2>
 
 <figure><img src="DraggedImage-153.png"/></figure>
 
-<h4>Representation</h4>
+<hr />
+
+<h2>Transparency</h2>
 
 <figure><img src="DraggedImage-154.png"/></figure>
 
-<h5>Polygon mesh: vertex list</h5>
+<hr />
+
+<h2>Shadow volumes &amp; the Stencil Buffer</h2>
 
 <figure><img src="DraggedImage-155.png"/></figure>
 
-<h5>Polygon mesh: edge list</h5>
+<h2>Scan-line generation of shadows</h2>
 
 <figure><img src="DraggedImage-156.png"/></figure>
 
-<p>Polygons represented as line segments, edges can make <strong>polygon clipping</strong> and <strong>scan-line</strong> filling operations easier.</p>
+<h1>Kinematics</h1>
 
-<h5>Polygon types</h5>
+<hr />
+
+<h2>Kinematics</h2>
+
+<p>Forward kinematics for me is: </p>
+
+<ul>
+	<li>Apply a behaviour to my robot arm—e.g. rotate one of my arms by pre-determined angles for each joint (degree of freedom)</li>
+	<li>Apply a steering behaviour to my robot body—e.g. translate myself by a pre-determined vector on the 2D surface (using my wheels) </li>
+</ul>
+
+<p>Inverse kinematics for me is: </p>
+
+<ul>
+	<li>How do I configure my robot arm to reach it?—determine all of the previously unknown angles for my joints. </li>
+	<li>Can my robot arm reach that object? </li>
+	<li>Is the object reachable from where I am?—do I need a forward kinematics translation by moving adjacent to it?</li>
+</ul>
+
+<h2>Forward kinematics</h2>
+
+<p>Forward kinematics can be posed as applying homogeneous transformations relative to the coordinate system.</p>
 
 <figure><img src="DraggedImage-157.png"/></figure>
 
-<h4>Polygon Properties</h4>
-
-<ul>
-	<li>In a <strong>convex</strong> polygon no internal angle is greater than 180 degrees</li>
-	<li>In a <strong>concave</strong> polygon there are internal angles that can be greater than 180 degrees</li>
-	<li><strong>Concave</strong> polygons can be represented as a <strong>conjunction</strong> of convex polygons (convex polygons have certain properties that simplify geometric operations and tesselations).</li>
-</ul>
-
-<hr />
-
-<h3>Level of detail</h3>
-
-<h4>Vertex spit method</h4>
-
 <figure><img src="DraggedImage-158.png"/></figure>
 
-<h1>The rendering pipeline I</h1>
+<h2>Inverse kinematics </h2>
 
-<hr />
-
-<h2>Graphics Programming</h2>
-
-<ul>
-	<li>Game engines, and other graphics programs, generally use either Direct3D (Windows) or OpenGL (most other platforms)</li>
-	<li>Modern PC graphics cards will support some version of both APIs</li>
-	<li>Game engines (like Unity) build upon these APIs to make development easier </li>
-</ul>
-
-<hr />
-
-<h2>Pipelining</h2>
-
-<ul>
-	<li>Both OpenGL and Direct3D operate a <strong>pipeline</strong>, consisting of several different stages</li>
-	<li>This allows the programmer to perform a number of different operations on the input data, and provides greater efficiency</li>
-	<li>We will focus mainly on Direct3D pipeline</li>
-</ul>
-
-<h2>Direct3D 11 Pipeline</h2>
+<p>The inverse kinematic problem is one of the most difficult to solve, as a set of simultaneous equations must be solved.</p>
 
 <figure><img src="DraggedImage-159.png"/></figure>
 
-<p>Simplify:</p>
+<h2>Degrees of freedom in human animation</h2>
+
+<p>In the human skeleton, each joint angle is typically specified by three angles and therefore have three degrees of freedom(DOF).</p>
+
+<ul>
+	<li>With increased degrees of freedom (more joints) get more possible solutions (or redundancy of movement). </li>
+	<li>After including, legs, hands, feet, head and a spine will have well over 100 degrees of freedom, possibly without even including fingers and toes!</li>
+</ul>
 
 <figure><img src="DraggedImage-160.png"/></figure>
 
-<h3>Representing Objects</h3>
+<h2>Solving Inverse Kinematics</h2>
+
+<p>Problems can arise in solving simultaneous equations for inverse kinematics, including</p>
 
 <ul>
-	<li>For efficiency, the graphics card will render objects as triangles </li>
-	<li><strong>Any</strong> polyhedron can be represented by triangles </li>
-	<li>Other 3D shapes can be approximated by triangles </li>
+	<li>the existence of multiple solutions (or joint configurations)</li>
+	<li>the possible non-existence of any solution (unreachable), or</li>
+	<li>sigularities of matrix equations (we will see later).</li>
 </ul>
 
-<h3>Input Assembler </h3>
+<h2>Solution techniques</h2>
 
-<blockquote>
-<p>Reads <strong>data</strong> from our buffers into a primitive format that can be used by the <strong>other stages of the pipeline</strong></p>
-</blockquote>
+<p>We can solve simultaneous equations using iterative or algebraic algorithms</p>
+
+<h3>Algebraic algorithms</h3>
+
+<p>Algebraic techniques for solving linear simultaneous equations are known from the field of numerical methods.</p>
+
+<h3>Iterative algorithms</h3>
 
 <ul>
-	<li>We mainly use Triangle Lists</li>
+	<li>Iterative algorithms work by calculating an approximate solution which converges to the exact solution, </li>
+	<li>typically be used for solving non-linear simultaneous equations or when numerical stability if paramount important.</li>
 </ul>
+
+<h2>Algebraic approach</h2>
 
 <figure><img src="DraggedImage-161.png"/></figure>
 
-<h3>Vertex Shader</h3>
-
-<blockquote>
-<p>Performs operations on individual vertices received from the Input Assembler stage</p>
-</blockquote>
+<figure><img src="DraggedImage-162.png"/></figure>
 
 <ul>
-	<li>This will typically include transformations </li>
-	<li>May also include per-vertex lighting</li>
+	<li>Note that checking if the determinant is zero requires the concept of &quot;zero&quot; in floating point, which requires the use of a small non-zero constant that is just larger than the maximum expected error as a result of numerical precision</li>
+	<li>This will depend on the machine you implement on.</li>
 </ul>
 
-<h3>Vertex Shader Transformations</h3>
+<hr />
 
-<figure><img src="DraggedImage-162.png"/></figure>
+<h2>Algebraic example </h2>
 
 <figure><img src="DraggedImage-163.png"/></figure>
 
-<h3>Tessellation(密集) Stages</h3>
-
-<blockquote>
-<p>(Optional Stages)</p>
-
-<p>These stages allow us to generate additional vertices within the GPU. Can take a lower detail model and render in higher detail  Can perform level of detail scaling</p>
-</blockquote>
-
-<h3>Geometry Shader</h3>
-
-<blockquote>
-<p>(Optional Stages)</p>
-
-<p> Operates on an entire primitive (e.g. triangle)  Can perform a number of algorithms, e.g. dynamically calculating normals, particle systems, shadow volume generation</p>
-</blockquote>
-
 <figure><img src="DraggedImage-164.png"/></figure>
-
-<h3>Stream Output Stage</h3>
-
-<blockquote>
-<p>Allows us to receive data (vertices or primitives) from the geometry shader or vertex shader and feed back into pipeline for processing by another set of shaders</p>
-
-<p>Useful e.g. for particle systems</p>
-</blockquote>
-
-<h3>Rasterizer Stage</h3>
-
-<blockquote>
-<p>Interpolates data between vertices to produce per-pixel data.Clips primitives into view frustum</p>
-
-<p>Performs culling</p>
-</blockquote>
 
 <figure><img src="DraggedImage-165.png"/></figure>
 
-<h3>Culling</h3>
-
-<blockquote>
-<p>In order to avoid rendering vertices that will not be displayed in the final image, DirectX performs ‘culling’  Triangles facing away from the camera will be culled and not rendered </p>
-</blockquote>
-
-<ul>
-	<li>DirectX performs ‘<strong>Counter-Clockwise culling</strong>’ (Default)
-
-		<ul>
-			<li>Triangles with vertices in a counter<strong>clockwise order are not rendered</strong></li>
-			<li>Use <strong>Left hand rule</strong></li>
-		</ul></li>
-</ul>
-
 <figure><img src="DraggedImage-166.png"/></figure>
 
-<h3>Pixel (Fragment) Shader</h3>
-
-<blockquote>
-<p>Produces <strong>colour</strong> values for each interpolated pixel fragment </p>
-
-<p>Per-pixel lighting can be performed</p>
-
-<p>Can also produce depth values for depthbuffering</p>
-</blockquote>
-
-<h3>Output-Merger Stage</h3>
-
-<blockquote>
-<p>Combines pixel shader output values to produce final image</p>
-
-<p>may also perform depth buffering</p>
-</blockquote>
-
 <figure><img src="DraggedImage-167.png"/></figure>
-
-<h3>Double Buffering </h3>
-
-<blockquote>
-<p>Don&#39;t want to draw objects directly to the screen</p>
-
-<p>The screen could update before a new frame has been completely drawn</p>
-
-<p>Instead, draw next frame to a buffer and swap buffers when complete.</p>
-</blockquote>
 
 <figure><img src="DraggedImage-168.png"/></figure>
 
 <hr />
 
-<h2>Shader</h2>
-
-<p>A very simple Unity Shader</p>
+<h2>The complexity of matrix algebra</h2>
 
 <figure><img src="DraggedImage-169.png"/></figure>
-
-<h3>The Structure</h3>
 
 <figure><img src="DraggedImage-170.png"/></figure>
 
 <figure><img src="DraggedImage-171.png"/></figure>
 
-<h4>What&#39;s permitted in CG/HLSL</h4>
-
-<blockquote>
-<p>The CG/HLSL syntax is quite similar to C</p>
-
-<p>There are a number of permitted datatypes (N.B. Not exhaustive):</p>
-</blockquote>
-
 <figure><img src="DraggedImage-172.png"/></figure>
 
 <figure><img src="DraggedImage-173.png"/></figure>
 
-<p>Functions:</p>
-
 <figure><img src="DraggedImage-174.png"/></figure>
+
+<hr />
+
+<h2>The challenge of Inverse Kinematics</h2>
+
+<p>Since solutions to simultaneous equations is central to geometric transformations and inverse kinematics </p>
+
+<ul>
+	<li>can’t efficiently calculate inverse matrices directly for solving simultaneous equations fast enough for real time, and </li>
+	<li>can’t efficiently check for singularities necessary to guarantee numerical stability or meaningful solutions.</li>
+</ul>
+
+<p>In practice iterative algorithms are used that reduce the complexity of the arithmetic.</p>
 
 </body>
 </html>
