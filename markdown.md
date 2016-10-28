@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Open Source Projects
-menu: open-source
+title: Markdown Notes
+menu: markdown
 css: ['open-source.css']
 javascript: ['underscore-min.js']
 ---
-{% include open-source-page.html %}
+{% include markdown.html %}
